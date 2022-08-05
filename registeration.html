@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script type="text/javascript"></script>
+</head>
+<body>
+    <form action="congrats.html" method="get">
+        <form1>
+         <div>
+            รายละเอียดผู้สมัครเข้าร่วมโครงการ
+         </div>
+         <div>
+            <label for="Id">เลขบัตรประจำตัวประชาชน:</label>
+            <input type="number" name="Id" id="Id" value="1100801357591" required>
+         </div>
+         <div>
+            คำนำหน้าชื่อ:
+                 <input type="radio" name="คำนำหน้าชื่อ" id="นาย">
+                 <label for="นาย">นาย</label>
+                 <input type="radio" name="คำนำหน้าชื่อ" id="นางสาว">
+                 <label for="นางสาว">นางสาว</label>
+                 <input type="radio" name="คำนำหน้าชื่อ" id="นาง">
+                 <label for="นาง">นาง</label>
+                 <input type="radio" name="คำนำหน้าชื่อ" id="อื่นๆ">
+                 <label for="อื่นๆ">อื่นๆ</label>
+                    <label></label>
+                    <input name="name">
+         </div>
+         <div>
+             <label for="name">ชื่อ:</label>
+             <input type="text" name="name" id="name" value="จุลจักร" required>
+             <label for="name" >นามสกุล:</label>
+             <input type="text" name="name" id="name" value="ทิพย์ภิบาล" required>
+         </div>
+         <div>
+            Prefix:
+                 <input type="radio" name="Prefix" id="Mr.">
+                 <label for="Mr.">Mr.</label>
+                 <input type="radio" name="Prefix" id="Miss">
+                 <label for="Miss">Miss</label>
+                 <input type="radio" name="Prefix" id="Ms.">
+                 <label for="Ms.">Ms.</label>
+                 <input type="radio" name="Prefix" id="Mrs.">
+                 <label for="Mrs.">Mrs.</label>
+                 <input type="radio" name="Prefix" id="อื่นๆ">
+                 <label for="อื่นๆ">อื่นๆ</label>
+                    <label></label>
+                    <input name="name">
+         </div>
+         <div>
+             <label for="name">First Name:</label>
+             <input type="text" name="name" id="name" value="Chullachak" required>
+             <label for="name">Last Name:</label>
+             <input type="text" name="name" id="name" value="Thipphibal" required>
+         </div>
+         <div>
+            เพศ:
+             <input type="radio" name="เพศ" id="ชาย">
+             <label for="ชาย">ชาย</label>
+             <input type="radio" name="เพศ" id="หญิง">
+             <label for="หญิง">หญิง</label>
+         </div>
+         <div>
+            <label for="เชื้อชาติ">เชื้อชาติ</label>
+            <select name="เชื้อชาติ" id="เชื้อชาติ">
+                 <option value="---">---</option>
+                 <option value="ไทย">ไทย</option>
+                 <option label ="จีน" value="จีน"></option>
+                 <option value="ไม่มีข้อมูล">ไม่มีข้อมูล</option>
+                 <option value="อื่นๆ">อื่นๆ</option>
+                 <option value="ไทยใหญ่">ไทยใหญ่</option>
+            </select>
+         </div>
+         <div>
+             <label for="สัญชาติ">สัญชาติ</label>
+             <select name="สัญชาติ" id="สัญชาติ">
+                 <option value="ไทย">ไทย</option>
+                 <option label ="จีน" value="จีน"></option>
+                 <option value="ไม่มีข้อมูล">ไม่มีข้อมูล</option>
+                 <option value="อื่นๆ">อื่นๆ</option>
+                 <option value="ไทยใหญ่">ไทยใหญ่</option>
+            </select>
+         </div>
+         <div>
+             <label for="ศาสนา">ศาสนา</label>
+             <select name="ศาสนา" id="ศาสนา">
+                 <option value="---">---</option>
+                 <option value="พุทธ">พุทธ</option>
+                 <option label ="คริสต์" value="คริสต์"></option>
+                 <option value="อิสลาม">อิสลาม</option>
+                 <option value="ไม่มีข้อมูล">ไม่มีข้อมูล</option>
+                 <option value="อื่นๆ">อื่นๆ</option>
+             </select>
+         </div>
+         <div>
+            <script type="text/javascript">
+                function formatDate(date){
+                var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+                
+                if (month.length < 2) month = '0' + month;
+                if (day.length < 2) day = '0' + day;
+                
+                return [year, month, day].join('-');
+                
+                }
+                
+                function getAge(dateString){
+                var birthdate = new Date().getTime();
+                if (typeof dateString === 'undefined' || dateString === null || (String(dateString) === 'NaN')){
+                // variable is undefined or null value
+                birthdate = new Date().getTime();
+                }
+                birthdate = new Date(dateString).getTime();
+                var now = new Date().getTime();
+                // now find the difference between now and the birthdate
+                var n = (now - birthdate)/1000;
+                if (n < 604800){ // less than a week
+                var day_n = Math.floor(n/86400);
+                if (typeof day_n === 'undefined' || day_n === null || (String(day_n) === 'NaN')){
+                // variable is undefined or null
+                return '';
+                }else{
+                return day_n + ' day' + (day_n > 1 ? 's' : '') + ' old';
+                }
+                } else if (n < 2629743){ // less than a month
+                var week_n = Math.floor(n/604800);
+                if (typeof week_n === 'undefined' || week_n === null || (String(week_n) === 'NaN')){
+                return '';
+                }else{
+                return week_n + ' week' + (week_n > 1 ? 's' : '') + ' old';
+                }
+                } else if (n < 31562417){ // less than 24 months
+                var month_n = Math.floor(n/2629743);
+                if (typeof month_n === 'undefined' || month_n === null || (String(month_n) === 'NaN')){
+                return '';
+                }else{
+                return month_n + ' month' + (month_n > 1 ? 's' : '') + ' old';
+                }
+                }else{
+                var year_n = Math.floor(n/31556926);
+                if (typeof year_n === 'undefined' || year_n === null || (String(year_n) === 'NaN')){
+                return year_n = '';
+                }else{
+                return year_n + ' year' + (year_n > 1 ? 's' : '') + ' old';
+                }
+                }
+                }
+                
+                function getAgeVal(pid){
+                var birthdate = formatDate(document.getElementById("txtbirthdate").value);
+                var count = document.getElementById("txtbirthdate").value.length;
+                if (count=='10'){
+                var age = getAge(birthdate);
+                var str = age;
+                var res = str.substring(0, 1);
+                if (res =='-' || res =='0'){
+                document.getElementById("txtbirthdate").value = "";
+                document.getElementById("txtage").value = "";
+                $('#txtbirthdate').focus();
+                return false;
+                }else{
+                document.getElementById("txtage").value = age;
+                }
+                }else{
+                document.getElementById("txtage").value = "";
+                return false;
+                }
+                }
+                </script>
+                <div>
+                    <label for="txtbirthdate">วันเดือนปี เกิด</label>
+                    <input id="txtbirthdate" type="text" name="txtbirthdate" maxlength="10" placeholder="mm/dd/yyyy" onkeyup="getAgeVal(0)" onblur="getAgeVal(0);" required>
+                </div>
+                <div>
+                    <label for="txtage">Age</label>
+                    <input type="text" name="txtage" id="txtage" autocomplete="off" disabled>
+                </div>
+         <div>
+             สถานภาพสมรส:
+             <input type="radio" name="สถานภาพสมรส" id="โสด">
+             <label for="โสด">โสด</label>
+             <input type="radio" name="สถานภาพสมรส" id="สมรส">
+             <label for="สมรส">สมรส</label>
+             <input type="radio" name="สถานภาพสมรส" id="หม้าย">
+             <label for="หม้าย">หม้าย</label>            
+         </div>
+        </form1>
+        <form2>
+         ข้อมูลการติดต่อ
+         <div> 
+             <label for="phone">โทรศัพท์มือถือ:</label> 
+             <input type="tel" name="phone" id="phone" required>
+         </div>
+         <div>
+             <label for="email">E-mail:</label> 
+             <input type="email" name="email" id="email" required>
+         </div>
+        </form2>
+         <form3>
+         การศึกษาขั้นสูงสุด
+         <div>
+             <label>สถาบัน:</label>
+             <input name="name">
+         </div>
+         <div>
+             <label for="วุฒิ">วุฒิ</label>
+             <select name="วุฒิ" id="วุฒิ">
+                 <option value="---">---</option>
+                 <option value="ประกาศนียบัตร หรือหลักสูตรเฉพาะ (สูงกว่าปริญญาเอก)">ประกาศนียบัตร หรือหลักสูตรเฉพาะ (สูงกว่าปริญญาเอก)</option>
+                 <option value="ปริญญาโท หรือเทียบเท่า">ปริญญาโท หรือเทียบเท่า</option>
+                 <option value="ปริญญาตรี หรือเทียบเท่า">ปริญญาตรี หรือเทียบเท่า</option>
+            </select>
+         </div>
+        </form3>
+        <form4>
+         ทักษะการใช้ภาษาอังกฤษ(เลือกอย่างใดอย่างหนึ่ง)
+         <div> 
+         <input type="radio" name="ทักษะการใช้ภาษาอังกฤษ(เลือกอย่างใดอย่างหนึ่ง)" id="ผลการสอบความรู้ภาษาอังกฤษ (มีอายุไม่เกิน 2 ปี)">
+         <label for="ผลการสอบความรู้ภาษาอังกฤษ (มีอายุไม่เกิน 2 ปี)">ผลการสอบความรู้ภาษาอังกฤษ (มีอายุไม่เกิน 2 ปี)</label>
+         <div> 
+             <label for="ประเภท">ประเภท:</label>
+             <select name=" ทักษะการใช้ภาษาอังกฤษ(เลือกอย่างใดอย่างหนึ่ง)" id="ประเภท">
+                <option value="--กรุณาเลือกประเภท--">--กรุณาเลือกประเภท--</option>
+                <option value="IELTS">IELTS คะแนนแต่ละทักษะ ไม่ต่ำกว่า 4.5</option>
+                <option value="TOFEL">TOFEL IBT คะแนนรวม ไม่ต่ำกว่า 32</option>
+                <option value="PTE">PTE Academic คะแนนรวม ไม่ต่ำกว่า 30</option>
+                <option valye="Cambridge English">Cambridge English : CAE คะแนนรวม ไม่ต่ำกว่า 30</option>
+             </select>
+         <div>
+             <label for="ผลคะแนน:">ผลคะแนน:</label>
+             <input type="ผลคะแนน" name="ทักษะการใช้ภาษาอังกฤษ(เลือกอย่างใดอย่างหนึ่ง)" id="ผลคะแนน:">
+         </div>
+         <div>
+             <label for="วันที่ออกผล:">วันที่ออกผล:</label>
+             <input type="วันที่ออกผล" name="ทักษะการใช้ภาษาอังกฤษ(เลือกอย่างใดอย่างหนึ่ง)" id="วันที่ออกผล">
+         </div>
+         </div>
+         <input type="radio" name="ทักษะการใช้ภาษาอังกฤษ(เลือกอย่างใดอย่างหนึ่ง)" id="หลักฐานการสำเร็จการศึกษาหลักสูตรภาษาอังกฤษเป็นสื่อในการเรียนการสอน">
+         <label for="หลักฐานการสำเร็จการศึกษาหลักสูตรภาษาอังกฤษเป็นสื่อในการเรียนการสอน">หลักฐานการสำเร็จการศึกษาหลักสูตรภาษาอังกฤษเป็นสื่อในการเรียนการสอน</label>
+         <div>
+             <label for="ประเภท">ประเภท</label>
+             <select name="ทักษะการใช้ภาษาอังกฤษ(เลือกอย่างใดอย่างหนึ่ง)" id="ประเภท">
+                 <option value="--กรุณาเลือกประเภทหลักฐาน--">--กรุณาเลือกประเภทหลักฐาน--</option>
+                 <option value="ระดับมัธยมศึกษา ระยะเวลา 5 ปี">ระดับมัธยมศึกษา ระยะเวลา 5 ปี</option>
+                 <option value="ระดับประถมศึกษาและมัธยมศึกษาตอนต้น">ระดับประถมศึกษาและมัธยมศึกษาตอนต้น</option>
+                 <option value="ระดับปริญญาบัตร/ประกาศนียบัตรจากประเทศออสเตรเลีย ระยะเวลา 1 ปี">ระดับปริญญาบัตร/ประกาศนียบัตรจากประเทศออสเตรเลีย ระยะเวลา 1 ปี</option>ฃ
+                 <option value="ระดับอนุปริญญา/สูงกว่าปริญญา/ประกาศนียบัตรวิชาชีพ หลักสูตรเต็มเวลา ระยะเวลาอย่างน้อย 2 ปั">ระดับอนุปริญญา/สูงกว่าปริญญา/ประกาศนียบัตรวิชาชีพ หลักสูตรเต็มเวลา ระยะเวลาอย่างน้อย 2 ปี</option>
+            </select>
+         </div>
+         </div>
+        </form4>
+        <form5>
+         บุคคลที่ทางดย.สามารถติดต่อได้กรณีฉุกเฉิน คือ
+         <div>
+            คำนำหน้าชื่อ: 
+             <input type="radio" name="คำนำหน้าชื่อ" id="นาย">
+             <label for="นาย">นาย</label>
+             <input type="radio" name="คำนำหน้าชื่อ" id="นางสาว">
+             <label for="นางสาว">นางสาว</label>
+             <input type="radio" name="คำนำหน้าชื่อ" id="นาง">
+             <label for="นาง">นาง</label>
+             <input type="radio" name="คำนำหน้าชื่อ" id="อื่นๆ">
+             <label for="อื่นๆ">อื่นๆ</label>
+                 <label></label>
+                 <input name="name">
+         </div>
+         <div>
+             <label for="name">ชื่อ:</label>
+             <input type="text" name="name" id="name" required>
+             <label for="name" >นามสกุล:</label>
+             <input type="text" name="name" id="name" required>
+         </div>
+         <div>
+            <label for="ความสัมพันธ์">ความสัมพันธ์</label>
+             <select name="ความสัมพันธ์" id="ความสัมพันธ์">
+                 <option value="---">---</option>
+                 <option value="บุตร">บุตร</option>
+                 <option value="บุตรบุญธรรม">บุตรบุญธรรม</option>
+                 <option value="คู่สมรส">คู่สมรส</option>
+                 <option value="บิดา">บิดา</option>
+                 <option value="มารดา">มารดา</option>
+                 <option value="พี่น้องร่วมบิดา หรือมารดา">พี่น้องร่วมบิดา หรือมารดา</option>
+                 <option value="ญาติ">ญาติ</option>
+                 <option value="ครู">ครู</option>
+                 <option value="นักสังคมสงเคราะห์">นักสังคมสงเคราะห์</option>
+                 <option value="เจ้าหน้าที่สาธารณสุข">เจ้าหน้าที่สาธารณสุข</option>
+                 <option value="ผู้ปกครอง">ผู้ปกครอง</option>
+                 <option value="ตนเอง">ตนเอง</option>
+                 <option value="คนรู้จัก">คนรู้จัก</option>
+                 <option value="บุตรเขย">บุตรเขย</option>
+                 <option value="อื่นๆ">อื่น ๆ</option>
+             </select>
+         </div>
+         <div>
+             <label for="phone">โทรศัพท์มือถือ:</label> 
+             <input type="tel" name="phone" id="phone" required>
+         </div>
+         <div>
+             <label for="email">E-mail:</label> 
+             <input type="email" name="email" id="email" required>
+         </div>
+        </form5>
+        <button type="submit">บันทึกข้อมูล</button> 
+        <input type="button" onclick="history.back();" value="ยกเลิก"></button>
+    </form>
+</body>
+</html>
